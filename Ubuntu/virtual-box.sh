@@ -7,4 +7,4 @@ then
 fi
 
 sudo apt-get install build-essential dkms
-sudo /media/VboxLinuxAdditions.amd64.run
+sudo /media/VboxLinuxAdditions-amd64.run
