@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo apt-get install uuid-dev libtool
+sudo apt-get install uuid-dev libtool build-essential autoconf
 
 pushd ~/tmp
 
@@ -17,9 +17,11 @@ popd
 ### Install JZMQ
 git clone git://github.com/nathanmarz/jzmq.git
 pushd jzmq
-#dpkg-buildpackage -rfakeroot
-./autogen.sh
-./configure
+pushd src
+touch classdist_noinst.stamp
+CLASSPATH=.:./.:$CLASSPATH javac -d . org/zeromq/ZMQ.java org/zeromq/ZMQException.java org/zeromq/ZMQQueue.java org/zeromq/ZMQForwarder.java org/zeromq/ZMQStreamer.java
+popd
+#./configure
 make
 sudo make install
 popd
