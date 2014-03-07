@@ -1,3 +1,3 @@
 #!/bin/sh
 
-sudo apt-get install build-essential dkms nedit git-core git-gui git-doc vim
+sudo apt-get install -y build-essential dkms nedit git-core git-gui git-doc vim
