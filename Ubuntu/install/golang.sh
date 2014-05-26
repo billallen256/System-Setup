@@ -11,9 +11,9 @@ source /etc/profile.d/go.sh
 sudo ln -s /usr/lib/go/bin/go /usr/bin/go
 sudo ln -s /usr/lib/go/bin/godoc /usr/bin/godoc
 sudo ln -s /usr/lib/go/bin/gofmt /usr/bin/gofmt
-sudo apt-get install -y vim-syntax-go
 
 # thanks to http://collectingknowledge.blogspot.com/2013/02/using-go-in-ubuntu-1204.html
+sudo apt-get install -y vim-syntax-go
 mkdir -p ~/.vim
 mkdir -p ~/.vim/syntax
 mkdir -p ~/.vim/ftdetect
