@@ -3,8 +3,9 @@
 mkdir -p ~/tmp
 cd ~/tmp
 #wget https://storage.googleapis.com/golang/go1.2.2.linux-amd64.tar.gz
-wget http://golang.org/dl/go1.3.linux-amd64.tar.gz
-tar xzvf go1.3.linux-amd64.tar.gz
+#wget http://golang.org/dl/go1.3.linux-amd64.tar.gz
+wget https://storage.googleapis.com/golang/go1.3.1.linux-amd64.tar.gz
+tar xzvf go1.3.1.linux-amd64.tar.gz
 sudo mv ~/tmp/go /usr/lib/
 sudo chown -R root:root /usr/lib/go
 sudo su - -c "echo \"export GOROOT=/usr/lib/go\" > /etc/profile.d/go.sh"
