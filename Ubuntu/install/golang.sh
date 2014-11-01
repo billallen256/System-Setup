@@ -1,18 +1,24 @@
 #!/bin/bash
 
-mkdir -p ~/tmp
-cd ~/tmp
+mkdir -p ~/setup
+pushd ~/setup
 #wget https://storage.googleapis.com/golang/go1.2.2.linux-amd64.tar.gz
 #wget http://golang.org/dl/go1.3.linux-amd64.tar.gz
-wget https://storage.googleapis.com/golang/go1.3.1.linux-amd64.tar.gz
-tar xzvf go1.3.1.linux-amd64.tar.gz
-sudo mv ~/tmp/go /usr/lib/
-sudo chown -R root:root /usr/lib/go
-sudo su - -c "echo \"export GOROOT=/usr/lib/go\" > /etc/profile.d/go.sh"
+#wget https://storage.googleapis.com/golang/go1.3.1.linux-amd64.tar.gz
+wget https://storage.googleapis.com/golang/go1.3.3.linux-amd64.tar.gz
+tar xzvf go1.3.3.linux-amd64.tar.gz
+sudo mv ~/setup/go /usr/local/
+sudo chown -R root:root /usr/local/go
+sudo su - -c "echo \"export GOROOT=/usr/local/go\" > /etc/profile.d/go.sh"
+sudo su - -c "echo \"export PATH=\$PATH:/usr/local/go/bin\" >> /etc/profile.d/go.sh"
 source /etc/profile.d/go.sh
-sudo ln -s /usr/lib/go/bin/go /usr/bin/go
-sudo ln -s /usr/lib/go/bin/godoc /usr/bin/godoc
-sudo ln -s /usr/lib/go/bin/gofmt /usr/bin/gofmt
+popd
+
+# Ensure everything builds, to prevent
+# http://stackoverflow.com/questions/12518374/golang-go-install-tries-usr-local-instead-of-gopath
+pushd /usr/local/go/src
+sudo ./all.bash
+popd
 
 # thanks to http://collectingknowledge.blogspot.com/2013/02/using-go-in-ubuntu-1204.html
 sudo apt-get install -y vim-syntax-go
