@@ -5,8 +5,9 @@ pushd ~/setup
 #wget https://storage.googleapis.com/golang/go1.2.2.linux-amd64.tar.gz
 #wget http://golang.org/dl/go1.3.linux-amd64.tar.gz
 #wget https://storage.googleapis.com/golang/go1.3.1.linux-amd64.tar.gz
-wget https://storage.googleapis.com/golang/go1.3.3.linux-amd64.tar.gz
-tar xzvf go1.3.3.linux-amd64.tar.gz
+#wget https://storage.googleapis.com/golang/go1.3.3.linux-amd64.tar.gz
+wget https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz
+tar xzvf go1.4.2.linux-amd64.tar.gz
 sudo mv ~/setup/go /usr/local/
 sudo chown -R root:root /usr/local/go
 sudo su - -c "echo \"export GOROOT=/usr/local/go\" > /etc/profile.d/go.sh"
