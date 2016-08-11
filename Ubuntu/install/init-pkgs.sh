@@ -15,3 +15,4 @@ sudo apt install -y google-chrome-stable
 
 sudo apt install -y unity-tweak-tool
 sudo apt install -y gnome-session-flashback
+sudo apt install -y gdm
